@@ -1,16 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Article to Notion">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3B82F6"/>
-      <stop offset="1" stop-color="#7C3AED"/>
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bg)"/>
-  <path d="M32 22h42l22 22v62a6 6 0 0 1-6 6H32a6 6 0 0 1-6-6V28a6 6 0 0 1 6-6Z" fill="#FFFFFF" opacity="0.96"/>
-  <path d="M74 22l22 22H78a4 4 0 0 1-4-4V22Z" fill="#C7D2FE"/>
-  <rect x="38" y="54" width="52" height="7" rx="3.5" fill="#1E3A8A"/>
-  <rect x="38" y="68" width="44" height="5" rx="2.5" fill="#93A7C4"/>
-  <rect x="38" y="79" width="52" height="5" rx="2.5" fill="#93A7C4"/>
-  <rect x="38" y="90" width="34" height="5" rx="2.5" fill="#93A7C4"/>
-  <path d="M92 22h8a6 6 0 0 1 6 6v14l-7-5-7 5V22Z" fill="#FBBF24"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="页间 · Between Pages">
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="#f6f2ea"/>
+  <rect x="2.75" y="2.75" width="122.5" height="122.5" rx="25.5" fill="none" stroke="#d9d2c2" stroke-width="1.5"/>
+
+  <path d="M34 20h40l20 20v66a6 6 0 0 1-6 6H34a6 6 0 0 1-6-6V26a6 6 0 0 1 6-6Z" fill="#fffdf8" stroke="#e3dccd" stroke-width="1.5"/>
+  <path d="M74 20l20 20H78a4 4 0 0 1-4-4V20Z" fill="#efe8d9"/>
+
+  <rect x="43" y="34" width="3" height="58" rx="1.5" fill="#a9bba6"/>
+
+  <rect x="53" y="40" width="29" height="4" rx="2" fill="#3a3730"/>
+  <rect x="53" y="52" width="23" height="3" rx="1.5" fill="#9a9488"/>
+  <rect x="53" y="61" width="27" height="3" rx="1.5" fill="#9a9488"/>
+  <rect x="53" y="70" width="19" height="3" rx="1.5" fill="#9a9488"/>
+
+  <path d="M53 84c8 0 10-6 18-6" fill="none" stroke="#a9bba6" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="73" cy="78" r="2.6" fill="#a9bba6"/>
+  <circle cx="79" cy="86" r="2.6" fill="#c9a9a0"/>
+  <path d="M73 78c0 6-3 8-6 9" fill="none" stroke="#c9a9a0" stroke-width="1.6" stroke-linecap="round"/>
 </svg>
