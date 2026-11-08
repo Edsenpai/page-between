@@ -1,0 +1,32 @@
+{
+  "name": "@local/article-notion-digest",
+  "version": "1.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Read a pasted article link, draw a mind map, bold the key points, add reading commentary — and browse saved notes in a desk panel.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  }
+}

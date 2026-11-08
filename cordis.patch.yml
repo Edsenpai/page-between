@@ -1,0 +1,4 @@
+# article-notion-digest: article reader + Notion-ready digest.
+- insert:
+    - id: article-notion-digest
+      name: '@local/article-notion-digest'
