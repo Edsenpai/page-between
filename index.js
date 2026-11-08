@@ -467,7 +467,7 @@ function normalizeAnalysis(raw) {
   }
 }
 
-export const inject = ['tools', 'skills', 'systemPrompt']
+export const inject = ['tools', 'skills', 'systemPrompt', 'webServer']
 
 export function apply(ctx, _config) {
   ctx.tools.register({
