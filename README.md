@@ -40,16 +40,18 @@
 ## 目录
 
 ```
-article-notion-digest/
+page-between/
 ├── index.js                 Host 半：工具、技能、提示词、/article-desk/* 路由
 ├── client.js                Client 半：首页、便签、文章页、对谈栏、语言切换
 ├── cordis.patch.yml         插件挂载声明
 ├── icon.svg                 侧栏图标
+├── package.json             插件清单（dsh.bundle 声明）
 ├── locale/{zh,en}.json      插件名称与描述
-└── lib/
-    ├── extract.js           HTML → Markdown 正文抽取
-    ├── mindmap.js           导图 SVG 生成与 PNG 渲染
-    └── model.js             模型调用、JSON 提取与修复、token 统计
+├── lib/
+│   ├── extract.js           HTML → Markdown 正文抽取
+│   ├── mindmap.js           导图 SVG 生成与 PNG 渲染
+│   └── model.js             模型调用、JSON 提取与修复、token 统计
+└── docs/                    仓库配图
 ```
 
 ## 一些实现细节

@@ -1,0 +1,53 @@
+{
+  "name": "dsh-page-between",
+  "version": "1.0.0",
+  "description": "Paste an article link and get a mind map, bolded key points, a section-by-section reading and a critique, plus draggable sticky notes for the sentences worth keeping. · 贴一个链接，读成结构导图、加粗要点、逐段精读与读后评论，还能把好句子收成便签。",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "reader",
+    "article",
+    "mindmap",
+    "summary",
+    "notion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edsenpai/page-between.git"
+  },
+  "homepage": "https://github.com/Edsenpai/page-between#readme",
+  "bugs": {
+    "url": "https://github.com/Edsenpai/page-between/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "README.en.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
+    }
+  }
+}

@@ -1,10 +1,10 @@
-// article-notion-digest — Client half.
+// page-between (页间) — Client half.
 //
 // 页间：贴链接 → 直接出解读（结论 / 要点 / 分段 / 评论 / 导图），
 // 框选正文任意一句就能收成便签，便签停在首页。
 
 window.__ModuleLoader__.load({
-  id: '@local/article-notion-digest',
+  id: 'dsh-page-between',
   factory(require) {
     const React = require('react')
     const h = React.createElement

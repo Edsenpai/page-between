@@ -1,4 +1,4 @@
-﻿// article-notion-digest — Host half.
+﻿// page-between (页间) — Host half.
 //
 // Adds one model-facing tool (`read_article`) that turns a URL into clean,
 // main-content Markdown, plus the `article-to-notion` skill and a short prompt

@@ -34,16 +34,18 @@ You need **Edge or Chrome** on the machine: the mind map is rendered to PNG by a
 ## Layout
 
 ```
-article-notion-digest/
+page-between/
 ├── index.js                 host half: tools, skill, prompt section, /article-desk/* routes
 ├── client.js                client half: home, stickers, article page, chat dock, language switch
 ├── cordis.patch.yml         bundle mount declaration
 ├── icon.svg                 sidebar icon
+├── package.json             bundle manifest (dsh.bundle)
 ├── locale/{zh,en}.json      plugin name and description
-└── lib/
-    ├── extract.js           HTML → Markdown main-content extraction
-    ├── mindmap.js           mind map SVG generation and PNG rendering
-    └── model.js             model calls, JSON extraction and repair, token accounting
+├── lib/
+│   ├── extract.js           HTML → Markdown main-content extraction
+│   ├── mindmap.js           mind map SVG generation and PNG rendering
+│   └── model.js             model calls, JSON extraction and repair, token accounting
+└── docs/                    repository images
 ```
 
 ## Notes on how it works
