@@ -780,6 +780,26 @@ function writeSession(url, lang) {
       kind: 'prefix',
       path: '/article-desk',
       handler: async (request, response) => {
+        // Same admission the DSH Connection itself applies: only a browser/page that
+        // holds the host's signed credential may use these routes. Resolved per request
+        // so a late-mounting connection service is still honoured.
+        const connection = ctx.get('connection')
+        if (connection !== undefined && typeof connection.admit === 'function') {
+          let rejection
+          try {
+            const admission = connection.admit({ headers: request.headers })
+            rejection = admission.rejection
+          } catch {
+            rejection = 403
+          }
+          if (rejection !== undefined) {
+            response.statusCode = rejection
+            response.setHeader('content-type', 'application/json; charset=utf-8')
+            response.setHeader('cache-control', 'no-store')
+            response.end(JSON.stringify({ ok: false, error: '未通过连接准入，请在 DSH 页面里使用页间' }))
+            return
+          }
+        }
         try {
           const parsed = new URL(request.url || '/', 'http://127.0.0.1')
 

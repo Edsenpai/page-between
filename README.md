@@ -33,9 +33,33 @@
 
 ## 安装
 
-见 [install.md](install.md)。三步：放文件夹 → 在 profile 的 `package.json` 登记 `link:` 依赖与 bundle → 重启 Harness。
+```sh
+dsh plugin --profile <你的 profile> add https://github.com/Edsenpai/page-between
+```
 
-需要本机装有 **Edge 或 Chrome**（导图靠它渲染成 PNG）。
+也可以手动登记，步骤见 [install.md](install.md)。
+
+### 导图需要本机浏览器
+
+导图是渲染出来的 PNG，靠一台 headless 浏览器完成。插件会自己找：
+
+| 系统 | 自动查找的位置 |
+| --- | --- |
+| Windows | Edge / Chrome 的默认安装路径 |
+| macOS | `/Applications` 下的 Edge、Chrome、Chromium、Brave |
+| Linux | `/usr/bin` 下的 microsoft-edge、google-chrome、chromium，以及 `/snap/bin/chromium` |
+
+装在别处（或者想指定某个浏览器）时，用环境变量指过去：
+
+```sh
+# macOS / Linux
+export DSH_MINDMAP_BROWSER="/path/to/chrome"
+
+# Windows (PowerShell)
+$env:DSH_MINDMAP_BROWSER = "D:\path\to\chrome.exe"
+```
+
+找不到浏览器时，导图会缺失，其余功能（正文、要点、精读、评论、便签、导出）都正常。
 
 ## 目录
 

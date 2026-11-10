@@ -232,8 +232,22 @@ window.__ModuleLoader__.load({
       }
     }
 
+    async function fetchWithRetry(url, options) {
+      const call = () => fetch(url, options)
+      try {
+        const first = await call()
+        if (first.status !== 404 && first.status !== 502 && first.status !== 503) return first
+        // the host may still be mounting the plugin after a reload: try once more
+        await new Promise(resolve => setTimeout(resolve, 700))
+        return await call()
+      } catch (error) {
+        await new Promise(resolve => setTimeout(resolve, 700))
+        return await call()
+      }
+    }
+
     async function requestAnalysis(url, lang = 'zh') {
-      const response = await fetch(`/article-desk/analyze?url=${encodeURIComponent(url)}&lang=${encodeURIComponent(lang)}`)
+      const response = await fetchWithRetry(`/article-desk/analyze?url=${encodeURIComponent(url)}&lang=${encodeURIComponent(lang)}`)
       let data
       try {
         data = await response.json()
@@ -246,7 +260,7 @@ window.__ModuleLoader__.load({
 
     async function requestOpen(url) {
       try {
-        const response = await fetch(`/article-desk/open?url=${encodeURIComponent(url)}`)
+        const response = await fetchWithRetry(`/article-desk/open?url=${encodeURIComponent(url)}`)
         const data = await response.json()
         return response.ok && data.ok ? data : null
       } catch {

@@ -27,9 +27,33 @@ The article page has a `简 / 繁 / EN` switch. Changing it regenerates the dige
 
 ## Install
 
-See [install.md](install.md) — three steps: drop the folder somewhere permanent, register a `link:` dependency plus a bundle entry in your profile's `package.json`, restart Harness.
+```sh
+dsh plugin --profile <your profile> add https://github.com/Edsenpai/page-between
+```
 
-You need **Edge or Chrome** on the machine: the mind map is rendered to PNG by a headless browser.
+Manual registration is described in [install.md](install.md).
+
+### The mind map needs a local browser
+
+The mind map is a rendered PNG, produced by a headless browser. The plugin looks for one itself:
+
+| Platform | Locations searched |
+| --- | --- |
+| Windows | the default Edge / Chrome install paths |
+| macOS | Edge, Chrome, Chromium and Brave under `/Applications` |
+| Linux | microsoft-edge, google-chrome and chromium under `/usr/bin`, plus `/snap/bin/chromium` |
+
+If yours lives somewhere else — or you want a specific binary — point at it:
+
+```sh
+# macOS / Linux
+export DSH_MINDMAP_BROWSER="/path/to/chrome"
+
+# Windows (PowerShell)
+$env:DSH_MINDMAP_BROWSER = "D:\path\to\chrome.exe"
+```
+
+Without a browser the mind map is skipped; the article, key points, section reading, critique, stickers and export all still work.
 
 ## Layout
 

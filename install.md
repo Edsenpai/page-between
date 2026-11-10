@@ -6,7 +6,12 @@
 
 - DeepSeek Harness（桌面版或 Web 版都行）
 - 已经配置好的模型（插件用 Harness 当前的默认模型，不另外要 key）
-- 生成导图需要本机装了 **Microsoft Edge**（Windows 自带；macOS 可装 Edge，或把 `lib/mindmap.js` 里的浏览器路径改成 Chrome）
+- 生成导图需要本机有 **Edge 或 Chrome**。插件会自动在常见位置查找：
+  - Windows：Edge / Chrome 默认安装路径
+  - macOS：`/Applications` 下的 Edge、Chrome、Chromium、Brave
+  - Linux：`/usr/bin` 下的 microsoft-edge、google-chrome、chromium，以及 `/snap/bin/chromium`
+
+  装在别处就设环境变量指定：`DSH_MINDMAP_BROWSER=/path/to/chrome`。找不到浏览器时只有导图缺失，其余功能正常。
 
 ## 安装
 
